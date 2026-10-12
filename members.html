@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
   <!-- If a photo is not yet in the images folder, load it from the old Squarespace address instead -->
-  <script>document.addEventListener("error",function(e){var t=e.target;if(t.tagName==="IMG"&&t.dataset.cdn&&!t.dataset.tried){t.dataset.tried="1";t.src=t.dataset.cdn;}},true);</script>
+  <script>document.addEventListener("error",function(e){var t=e.target;if(t.tagName!=="IMG")return;if(t.dataset.cdn&&!t.dataset.tried){t.dataset.tried="1";t.src=t.dataset.cdn;}else{var f=t.closest("figure")||t;f.style.display="none";}},true);</script>
 </head>
 <body>
   <div class="flag-stripe"></div>
@@ -61,6 +61,9 @@
         <p class="eyebrow">The coalition</p>
         <h2>All member organisations</h2>
         <div class="flag-rule"><span></span><span></span><span></span></div>
+        <div class="photo" style="aspect-ratio:16/7;margin-bottom:32px">
+          <img src="members-group.jpg" alt="Representatives of CCMG member organisations" loading="lazy" style="object-position:center 15%">
+        </div>
         <ul class="member-list">
           <li>Right To Be Free (RTBF)</li>
           <li>Media Response</li>
